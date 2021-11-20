@@ -2,11 +2,11 @@ import bcrypt from 'bcrypt';
 
 export const hashPassword = (password) => {
   return new Promise((resolve, reject) => {
-    bycrpt.getSalt(12, (err, salt) => {
+    bcrypt.genSalt(12, (err, salt) => {
       if (err) {
         reject(err);
       }
-      bycrpt.hash(password, salt, (err, hash) => {
+      bcrypt.hash(password, salt, (err, hash) => {
         if (err) {
           reject(err);
         }
@@ -17,5 +17,5 @@ export const hashPassword = (password) => {
 };
 
 export const comparePassword = (password, hashed) => {
-    return bcrypt.compare(password, hashed);
-}
+  return bcrypt.compare(password, hashed);
+};
