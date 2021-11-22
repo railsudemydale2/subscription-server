@@ -1,8 +1,9 @@
-import express from 'express';
-import { prices } from '../controllers/subs';
+import express from "express";
+
 const router = express.Router();
 
-router.get('/prices', prices);
+import { prices } from "../controllers/subs";
 
+router.get("/prices", prices);
 
 module.exports = router;
