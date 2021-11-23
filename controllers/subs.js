@@ -5,3 +5,7 @@ export const prices = async (req, res) => {
   //   console.log("prices", prices);
   res.json(prices.data.reverse());
 };
+
+export const createSubscription = async (req, res) => {
+  console.log(req.body);
+};
