@@ -72,7 +72,7 @@ export const subscriptions = async (req, res) => {
   }
 };
 
-export const CustomerPortal = async (req, res) => {
+export const customerPortal = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
     const portalSession = await stripe.billingPortal.sessions.create({
